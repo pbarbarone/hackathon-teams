@@ -1,6 +1,17 @@
 <div>
   <% teams.forEach(function(team) { %>
+
     <% include ./show %>
+
     <hr />
+  	<a href="/teams/<%= team.name %>" class="btn btn-danger delete">Delete Post
+	</a>
+<form action="/teams/5" id="put-form">
+  	<label for="teamName">Update Team Name</label>
+  	<input type="text" name="name" value="<%= team.name %>">
+  	<label for="teamMembers">Add/Remove Member</label>
+  	<input type="text" name="members" value="<%= team.members %>">
+  	<input type="submit" value="Update a team" class="update-team">
+</form>
   <% }) %>
 </div>
